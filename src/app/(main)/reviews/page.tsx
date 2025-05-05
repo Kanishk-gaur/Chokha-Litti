@@ -23,7 +23,7 @@ export default function Testimonials() {
       name: "Rajesh Kumar",
       location: "Delhi",
       rating: 5,
-      text: "The most authentic Litti Chokha I've had outside of Bihar. The smoky flavor of the litti and the spicy chokha took me back to my childhood. Absolutely delicious!",
+      text: "The most authentic Litti Chokha I&apos;ve had outside of Bihar. The smoky flavor of the litti and the spicy chokha took me back to my childhood. Absolutely delicious!",
     },
     {
       id: 2,
@@ -37,7 +37,7 @@ export default function Testimonials() {
       name: "Amit Sharma",
       location: "Patna",
       rating: 4,
-      text: "Being from Bihar, I'm very particular about my Litti Chokha. This place does justice to the traditional recipe. The sattu filling was perfectly spiced and the chokha had the right amount of tanginess.",
+      text: "Being from Bihar, I&apos;m very particular about my Litti Chokha. This place does justice to the traditional recipe. The sattu filling was perfectly spiced and the chokha had the right amount of tanginess.",
     },
     {
       id: 4,
@@ -47,6 +47,7 @@ export default function Testimonials() {
       text: "The Litti Thali is a must-try! It gives you a complete experience of this rustic cuisine. The staff was also very helpful in explaining the dish to first-timers like me.",
     },
   ]
+  
 
   const nextTestimonial = () => {
     setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))
@@ -84,7 +85,7 @@ export default function Testimonials() {
           <motion.div variants={itemVariants} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-4">What Our Customers Say</h2>
             <p className="max-w-2xl mx-auto text-amber-800">
-              Don't just take our word for it. Here's what our customers have to say about their Chokha Litti
+              Don&apos;t just take our word for it. Here&apos;s what our customers have to say about their Chokha Litti
               experience.
             </p>
           </motion.div>

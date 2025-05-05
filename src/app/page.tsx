@@ -2,9 +2,7 @@
 import { useState } from 'react';
 import HeroSection from '@/components/home/HeroSection';
 import About from '@/components/about/aboutcode';
-import Menu from '@/app/(main)/menu/page';
 import Testimonials from '@/app/(main)/reviews/page';
-import Contact from '@/app/(main)/contact/page';
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/footer/Footer';
 import Recipe from './(main)/recipe/page';

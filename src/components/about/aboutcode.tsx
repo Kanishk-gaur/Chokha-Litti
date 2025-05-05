@@ -3,7 +3,6 @@
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import Image from "next/image"
-import Navbar from "@/components/navbar/Navbar"
 
 export default function About() {
   const ref = useRef(null)

@@ -50,7 +50,7 @@ export default function Location() {
             </h2>
             <p className="max-w-2xl mx-auto text-amber-800">
               Experience the authentic taste of Chokha Litti at our locations.
-              We're conveniently located to serve you the best traditional
+              We are conveniently located to serve you the best traditional
               flavors.
             </p>
           </motion.div>
@@ -62,7 +62,7 @@ export default function Location() {
                 title="Chokha Litti Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.6223623099927!2d77.16806227594641!3d28.551068487774554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1d005a2edae1%3A0x3220f0ec9ac41e26!2sBudh%20vihar%20munirka!5e0!3m2!1sen!2sin!4v1746441327804!5m2!1sen!2sin" 
                 className="w-full aspect-video border-0"
-                allowFullScreen=""
+                allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />

@@ -68,7 +68,7 @@ export default function Contact() {
           </motion.h2>
 
           <motion.p variants={itemVariants} className="text-amber-800 mb-8 text-center">
-            Have questions about Chokha Litti or want to share your experience? We'd love to hear from you!
+            Have questions about Chokha Litti or want to share your experience? We&apos;d love to hear from you!
           </motion.p>
 
           <motion.form
