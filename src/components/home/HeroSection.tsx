@@ -14,22 +14,22 @@ export default function HeroSection() {
       id: 1, 
       name: "Traditional Litti Chokha", 
       description: "Whole wheat dough balls filled with roasted gram flour, herbs & spices",
-      price: "₹199",
-      image: "/images/litti-1.jpg" 
+      price: "₹169",
+      image: "/images/litti.jpeg" 
     },
     { 
       id: 2, 
       name: "Spicy Baingan Chokha", 
       description: "Smoky roasted eggplant mash with aromatic spices and fresh herbs",
-      price: "₹149",
-      image: "/images/chokha-1.jpg" 
+      price: "₹49",
+      image: "/images/litti-chockha.jpeg" 
     },
     { 
       id: 3, 
       name: "Sattu-Stuffed Litti", 
       description: "Our signature litti with premium sattu filling and ghee",
-      price: "₹249",
-      image: "/images/litti-2.jpg" 
+      price: "₹229",
+      image: "/images/Main-page.jpg" 
     }
   ];
 
@@ -56,7 +56,7 @@ export default function HeroSection() {
       {/* Background with overlay gradient for depth */}
       <div className="absolute inset-0">
         <Image
-          src="/images/Main-page.jpg"
+          src="/images/Des.jpeg"
           alt="Litti Chokha Background"
           fill
           className="object-cover"
@@ -213,7 +213,7 @@ export default function HeroSection() {
                       >
                         <div className="bg-orange-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
                           <Image 
-                            src="/images/swiggy-icon.png" 
+                            src="/images/Swiggy_logo_PNG2.png" 
                             alt="Swiggy" 
                             width={20} 
                             height={20}
