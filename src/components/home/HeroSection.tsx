@@ -7,29 +7,29 @@ import Image from 'next/image';
 export default function HeroSection() {
   const [showOrderOptions, setShowOrderOptions] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  
+
   // Enhanced food items with better descriptions and price info
   const featuredItems = [
-    { 
-      id: 1, 
-      name: "Traditional Litti Chokha", 
+    {
+      id: 1,
+      name: "Traditional Litti Chokha",
       description: "Whole wheat dough balls filled with roasted gram flour, herbs & spices",
       price: "₹169",
-      image: "/images/litti.jpeg" 
+      image: "/images/litti.jpeg"
     },
-    { 
-      id: 2, 
-      name: "Spicy Baingan Chokha", 
+    {
+      id: 2,
+      name: "Spicy Baingan Chokha",
       description: "Smoky roasted eggplant mash with aromatic spices and fresh herbs",
       price: "₹49",
-      image: "/images/litti-chockha.jpeg" 
+      image: "/images/litti-chockha.jpeg"
     },
-    { 
-      id: 3, 
-      name: "Sattu-Stuffed Litti", 
+    {
+      id: 3,
+      name: "Sattu-Stuffed Litti",
       description: "Our signature litti with premium sattu filling and ghee",
       price: "₹229",
-      image: "/images/Main-page.jpg" 
+      image: "/images/Main-page.jpg"
     }
   ];
 
@@ -38,7 +38,7 @@ export default function HeroSection() {
     const interval = setInterval(() => {
       setActiveIndex((current) => (current + 1) % featuredItems.length);
     }, 5000);
-    
+
     return () => clearInterval(interval);
   }, [featuredItems.length]);
 
@@ -90,7 +90,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg"
           >
-            <span className="text-amber-400">Chokha Litti</span> {/* Accent color for part of title */}
+            <span className="text-amber-400">Chokha Litti</span>
             <span className="block mt-2 md:mt-3 text-3xl md:text-4xl font-medium">A Taste of Bihar&apos;s Heritage</span>
           </motion.h1>
           
@@ -222,6 +222,25 @@ export default function HeroSection() {
                         <div>
                           <div className="font-medium">Order via Swiggy</div>
                           <div className="text-xs text-gray-500">Delivered in 25-40 mins</div>
+                        </div>
+                      </a>
+                      <a
+                        href="https://wa.me/yourphonenumber"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center px-4 py-3 text-gray-800 hover:bg-amber-50 rounded-md transition-colors"
+                      >
+                        <div className="bg-green-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                          <Image 
+                            src="/images/whatsapp-logo.png" 
+                            alt="WhatsApp" 
+                            width={20} 
+                            height={20}
+                          />
+                        </div>
+                        <div>
+                          <div className="font-medium">Order via WhatsApp</div>
+                          <div className="text-xs text-gray-500">Direct message for orders</div>
                         </div>
                       </a>
                     </div>

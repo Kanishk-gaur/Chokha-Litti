@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+
 import HeroSection from '@/components/home/HeroSection';
 import About from '@/components/about/aboutcode';
 import Testimonials from '@/app/(main)/reviews/page';
@@ -7,8 +7,6 @@ import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/footer/Footer';
 import Recipe from './(main)/recipe/page';
 import Location from './(main)/location/page';
-import Image from 'next/image';
-import FeedbackForm from '@/components/feedback/feedback-form';
 import Benefits from '@/components/benefits/benefits';
 
 export default function Home() {
@@ -71,9 +69,9 @@ export default function Home() {
           <section id="location" className="scroll-mt-20">
             <Location />
           </section>
-          <section id="feedback" className="scroll-mt-20">
+          {/* <section id="feedback" className="scroll-mt-20">
             <FeedbackForm />
-          </section>
+          </section> */}
          
         </main>
       </div>
