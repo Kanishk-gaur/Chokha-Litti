@@ -4,8 +4,6 @@ import { useInView } from "react-intersection-observer"
 import { useRouter } from "next/navigation"
 import { Zap, Heart, Dumbbell, Sprout, Flame, Sparkles, ChevronRight, ArrowRight, Leaf, Shield } from "lucide-react"
 import Image from "next/image"
-import Navbar from "@/components/navbar/Navbar"
-import Footer from "@/components/footer/Footer"
 
 const Benefits = () => {
   const router = useRouter()
@@ -141,7 +139,6 @@ const Benefits = () => {
 
   return (
     <>
-      <Navbar />
    
     <section className="py-20 px-4 relative overflow-hidden">
       {/* Background with gradient and pattern */}
@@ -359,7 +356,6 @@ const Benefits = () => {
         </motion.div>
       </div>
     </section>
-    <Footer />
     </>
   )
 }

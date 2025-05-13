@@ -187,7 +187,7 @@ export default function HeroSection() {
                   >
                     <div className="p-2 space-y-1">
                       <a
-                        href="https://www.zomato.com/your-link"
+                        href="https://zomato.onelink.me/xqzv/6nmthhe9"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center px-4 py-3 text-gray-800 hover:bg-amber-50 rounded-md transition-colors"
@@ -206,7 +206,7 @@ export default function HeroSection() {
                         </div>
                       </a>
                       <a
-                        href="https://www.swiggy.com/your-link"
+                        href="https://www.swiggy.com/menu/1072365?source=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center px-4 py-3 text-gray-800 hover:bg-amber-50 rounded-md transition-colors"
@@ -225,7 +225,7 @@ export default function HeroSection() {
                         </div>
                       </a>
                       <a
-                        href="https://wa.me/yourphonenumber"
+                        href="https://wa.me/9289700931"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center px-4 py-3 text-gray-800 hover:bg-amber-50 rounded-md transition-colors"

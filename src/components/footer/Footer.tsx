@@ -17,7 +17,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Chokha Litti</h3>
             <p className="text-amber-100">
-              Preserving the authentic taste of Bihari cuisine since 2010. Our
+              Preserving the authentic taste of Bihari cuisine. Our
               traditional recipes bring you the rustic flavors of rural India.
             </p>
           </div>
