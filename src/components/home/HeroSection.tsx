@@ -90,7 +90,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg"
           >
-            <span className="text-amber-400">Litti Chokha</span> {/* Accent color for part of title */}
+            <span className="text-amber-400">Chokha Litti</span> {/* Accent color for part of title */}
             <span className="block mt-2 md:mt-3 text-3xl md:text-4xl font-medium">A Taste of Bihar&apos;s Heritage</span>
           </motion.h1>
           

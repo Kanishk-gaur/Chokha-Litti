@@ -121,11 +121,7 @@ export default function Location() {
             </motion.div>
           </div>
 
-          <motion.div variants={itemVariants} className="mt-12 text-center">
-            <div className="inline-block bg-amber-600 text-white px-6 py-3 rounded-full font-bold">
-              We also offer catering services for events and parties!
-            </div>
-          </motion.div>
+          
         </motion.div>
       </div>
     </section>
