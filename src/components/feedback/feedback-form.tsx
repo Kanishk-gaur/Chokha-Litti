@@ -132,7 +132,7 @@ export default function FeedbackForm() {
 
                 <div>
                   <label className="block text-black font-medium mb-2 text-xl">
-                    City*
+                    Native City*
                   </label>
                   <input
                     type="text"
