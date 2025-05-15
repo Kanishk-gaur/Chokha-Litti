@@ -4,7 +4,7 @@ import {
   FaInstagram,
   FaTwitter,
   FaMapMarkerAlt,
-  FaPhone,
+  FaWhatsapp,
   FaEnvelope,
 } from "react-icons/fa";
 
@@ -62,7 +62,7 @@ export default function Footer() {
                 <span>Budha Vihar ,Munirika,New Delhi, Delhi 110067</span>
               </li>
               <li className="flex items-center">
-                <FaPhone className="mr-2" />
+              <FaWhatsapp className="mr-2 " />
                 <span>+91 9097272726</span>
               </li>
               <li className="flex items-center">

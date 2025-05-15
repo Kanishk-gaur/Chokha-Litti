@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { MapPin, Clock, Phone, Calendar } from "lucide-react";
+import { MapPin, Clock, Phone} from "lucide-react";
 
 export default function Location() {
   const ref = useRef(null);
@@ -30,7 +30,7 @@ export default function Location() {
       address: "Budha Vihar ,Munirika,New Delhi, Delhi 110067",
       hours: "Sunday to Saturday: 6 PM - 2 AM",
       phone: "+91 9560323141",
-      events: "Live folk music every Friday evening",
+      
     },
   ];
 
@@ -108,13 +108,7 @@ export default function Location() {
                       />
                       <p className="text-amber-900">{location.phone}</p>
                     </div>
-                    <div className="flex items-start">
-                      <Calendar
-                        size={20}
-                        className="text-amber-600 mt-1 mr-3 flex-shrink-0"
-                      />
-                      <p className="text-amber-900">{location.events}</p>
-                    </div>
+                   
                   </div>
                 </motion.div>
               ))}

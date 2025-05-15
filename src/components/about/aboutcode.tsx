@@ -198,7 +198,7 @@ export default function About() {
                   className="relative h-[350px] w-[350px] md:h-[450px] md:w-[450px] mx-auto overflow-hidden rounded-full shadow-2xl border-8 border-white"
                 >
                   <Image
-                    src="/images/Des.jpeg"
+                    src="/images/Front.jpeg"
                     alt="Traditional Chokha Litti preparation"
                     fill
                     className="object-cover"
@@ -208,7 +208,7 @@ export default function About() {
                   <div className="absolute inset-0 bg-gradient-to-t from-amber-900/40 to-transparent" />
 
                   {/* Decorative dots */}
-                  {[...Array(8)].map((_, i) => (
+                  {/* {[...Array(8)].map((_, i) => (
                     <motion.div
                       key={i}
                       className="absolute w-3 h-3 bg-white rounded-full shadow-md"
@@ -227,7 +227,7 @@ export default function About() {
                         ease: "easeInOut",
                       }}
                     />
-                  ))}
+                  ))} */}
                 </motion.div>
 
                 {/* Image caption */}
@@ -328,7 +328,7 @@ export default function About() {
                 <h2 className="text-3xl md:text-5xl font-bold text-amber-900 mb-8 relative">
                   The Sweetness of{" "}
                   <span className="text-orange-600 relative">
-                    Laung Litti
+                    Laung Latta
                     <motion.svg
                       width="100%"
                       height="8"
@@ -352,7 +352,7 @@ export default function About() {
 
                 <motion.div variants={containerVariants} className="space-y-6 text-lg text-amber-800">
                   <motion.p variants={itemVariants} className="leading-relaxed">
-                    Laung Litti is a delectable sweet counterpart to the savory Chokha Litti, originating from the same
+                    Laung Latta is a delectable sweet counterpart to the savory Chokha Litti, originating from the same
                     regions of Bihar and Uttar Pradesh. This sweet treat features a golden, crispy exterior made from
                     wheat flour, with a delicious filling of khoya (reduced milk solids), sugar, cardamom, and other
                     aromatic spices.
@@ -362,13 +362,13 @@ export default function About() {
                     distinctive name and a wonderful aromatic flavor.
                   </motion.p>
                   <motion.p variants={itemVariants} className="leading-relaxed">
-                    Often served during festive occasions and celebrations, Laung Litti represents the sweeter side of
+                    Often served during festive occasions and celebrations, Laung Latta represents the sweeter side of
                     traditional Bihar cuisine. These sweet dumplings are typically deep-fried to achieve a perfect
                     golden-brown color and then soaked in sugar syrup, creating a harmonious balance of textures and
                     flavors.
                   </motion.p>
                   <motion.p variants={itemVariants} className="leading-relaxed">
-                    The contrast between the crispy exterior and the soft, sweet filling makes Laung Litti a cherished
+                    The contrast between the crispy exterior and the soft, sweet filling makes Laung Latta a cherished
                     dessert that has been passed down through generations, preserving the rich culinary heritage of the
                     region.
                   </motion.p>

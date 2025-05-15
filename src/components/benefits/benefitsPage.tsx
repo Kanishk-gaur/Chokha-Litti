@@ -1,8 +1,8 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useState } from 'react';
+
+import { useState } from "react";
 import {
   ChevronRight,
   Award,
@@ -13,61 +13,62 @@ import {
   Sparkles,
   Leaf,
 } from "lucide-react";
+import { Clock, MessageCircle } from "lucide-react";
 
 const BenefitsPage = () => {
-  const router = useRouter();
+ 
   const [showOrderOptions, setShowOrderOptions] = useState(false);
 
   const gheeBenefits = [
     {
-      title: "Rich in Healthy Fats",
+      title: "Complete Nutritional Meal",
       description:
-        "Contains CLA (Conjugated Linoleic Acid) which supports heart health and may help reduce body fat.",
+        "Litti Chokha with ghee provides a balanced mix of carbs, protein, fiber, and healthy fats for overall nourishment.",
       icon: <Heart className="w-8 h-8 text-red-500" />,
       color: "bg-red-50",
       borderColor: "border-red-200",
       iconBg: "bg-red-100",
     },
     {
-      title: "Boosts Digestion",
+      title: "Aids Digestion",
       description:
-        "Stimulates digestive enzymes and helps in proper absorption of nutrients from food.",
+        "The ghee in Litti helps stimulate digestive enzymes, making the meal light on the stomach and easy to digest.",
       icon: <Leaf className="w-8 h-8 text-green-500" />,
       color: "bg-green-50",
       borderColor: "border-green-200",
       iconBg: "bg-green-100",
     },
     {
-      title: "Enhances Immunity",
+      title: "Boosts Immunity",
       description:
-        "Packed with fat-soluble vitamins A, D, E, and K that strengthen the immune system.",
+        "The combination of roasted sattu, vegetables, and ghee supports the immune system with essential nutrients.",
       icon: <Shield className="w-8 h-8 text-blue-500" />,
       color: "bg-blue-50",
       borderColor: "border-blue-200",
       iconBg: "bg-blue-100",
     },
     {
-      title: "Anti-inflammatory",
+      title: "Anti-inflammatory Properties",
       description:
-        "Contains butyric acid which reduces inflammation in the body and supports gut health.",
+        "Ghee contains butyric acid, which reduces inflammation and promotes gut health when combined with fiber-rich chokha.",
       icon: <Flame className="w-8 h-8 text-orange-500" />,
       color: "bg-orange-50",
       borderColor: "border-orange-200",
       iconBg: "bg-orange-100",
     },
     {
-      title: "Brain Nourishment",
+      title: "Sustained Energy",
       description:
-        "Healthy fats in ghee support brain function and nervous system development.",
+        "This traditional combo offers slow-releasing energy, making it a perfect meal for long-lasting stamina.",
       icon: <Brain className="w-8 h-8 text-purple-500" />,
       color: "bg-purple-50",
       borderColor: "border-purple-200",
       iconBg: "bg-purple-100",
     },
     {
-      title: "Skin & Hair Health",
+      title: "Natural Glow & Wellness",
       description:
-        "Nourishes skin from within and promotes shiny, healthy hair when consumed regularly.",
+        "Regular consumption of ghee with nutrient-rich foods like Litti Chokha enhances skin and hair health naturally.",
       icon: <Sparkles className="w-8 h-8 text-amber-500" />,
       color: "bg-amber-50",
       borderColor: "border-amber-200",
@@ -75,44 +76,44 @@ const BenefitsPage = () => {
     },
   ];
 
-  const preparationSteps = [
-    {
-      step: 1,
-      title: "Fresh Cow Milk",
-      description:
-        "We start with fresh, organic milk from grass-fed cows raised in natural environments.",
-      image: "/images/Cow.jpg?height=150&width=120",
-    },
-    {
-      step: 2,
-      title: "Culturing the Cream",
-      description:
-        "The milk is set aside to naturally culture, developing beneficial probiotics.",
-      image: "/images/Cow2.png?height=150&width=120",
-    },
-    {
-      step: 3,
-      title: "Churning Butter",
-      description:
-        "Cultured cream is churned to separate golden butter from buttermilk.",
-      image: "/images/Cow3.png?height=150&width=120",
-    },
+  // const preparationSteps = [
+  //   {
+  //     step: 1,
+  //     title: "Fresh Cow Milk",
+  //     description:
+  //       "We start with fresh, organic milk from grass-fed cows raised in natural environments.",
+  //     image: "/images/Cow.jpg?height=150&width=120",
+  //   },
+  //   {
+  //     step: 2,
+  //     title: "Culturing the Cream",
+  //     description:
+  //       "The milk is set aside to naturally culture, developing beneficial probiotics.",
+  //     image: "/images/Cow2.png?height=150&width=120",
+  //   },
+  //   {
+  //     step: 3,
+  //     title: "Churning Butter",
+  //     description:
+  //       "Cultured cream is churned to separate golden butter from buttermilk.",
+  //     image: "/images/Cow3.png?height=150&width=120",
+  //   },
 
-    {
-      step: 4,
-      title: "Clarification",
-      description:
-        "Pure golden ghee is carefully strained to remove all milk solids.",
-      image: "/images/Cow4.jpeg?height=150&width=120",
-    },
-    {
-      step: 5,
-      title: "Aged to Perfection",
-      description:
-        "Our ghee is aged for enhanced flavor and nutritional properties.",
-      image: "/images/Cow5.jpeg?height=150&width=120",
-    },
-  ];
+  //   {
+  //     step: 4,
+  //     title: "Clarification",
+  //     description:
+  //       "Pure golden ghee is carefully strained to remove all milk solids.",
+  //     image: "/images/Cow4.jpeg?height=150&width=120",
+  //   },
+  //   {
+  //     step: 5,
+  //     title: "Aged to Perfection",
+  //     description:
+  //       "Our ghee is aged for enhanced flavor and nutritional properties.",
+  //     image: "/images/Cow5.jpeg?height=150&width=120",
+  //   },
+  // ];
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -176,9 +177,8 @@ const BenefitsPage = () => {
             Bihari cuisine prepared with handcrafted desi ghee
           </motion.p>
         </motion.div>
-
-        {/* Ghee Preparation Section with timeline */}
-        <section className="mb-28">
+        Ghee Preparation Section with timeline
+        {/* <section className="mb-28">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -203,7 +203,7 @@ const BenefitsPage = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            {/* Timeline line */}
+            
             <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-amber-300 to-amber-500 transform -translate-x-1/2 hidden md:block"></div>
 
             <div className="space-y-16 md:space-y-0">
@@ -236,7 +236,7 @@ const BenefitsPage = () => {
                   </div>
 
                   <div className="md:w-1/2 relative">
-                    {/* Timeline dot */}
+                    
                     <div className="absolute left-1/2 top-1/2 w-6 h-6 bg-amber-500 rounded-full transform -translate-x-1/2 -translate-y-1/2 hidden md:block z-10 border-4 border-white shadow-md"></div>
 
                     <div
@@ -258,8 +258,7 @@ const BenefitsPage = () => {
               ))}
             </div>
           </motion.div>
-        </section>
-
+        </section> */}
         {/* Ghee Benefits Section with colorful cards */}
         <section className="mb-28">
           <motion.div
@@ -269,8 +268,8 @@ const BenefitsPage = () => {
             className="mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-800 mb-2">
-              Health Benefits of{" "}
-              <span className="text-amber-600">Pure Desi Ghee</span>
+              Benefits of{" "}
+              <span className="text-amber-600">Litti Chokha with Ghee</span>
             </h2>
             <div className="w-32 h-1.5 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mb-8 rounded-full"></div>
             <p className="text-lg md:text-xl text-center text-orange-700 max-w-4xl mx-auto">
@@ -310,7 +309,6 @@ const BenefitsPage = () => {
             ))}
           </motion.div>
         </section>
-
         {/* Litti Chokha with Ghee Section with glass morphism */}
         <section className="relative mb-28 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-amber-200 to-orange-200 rounded-3xl"></div>
@@ -388,7 +386,6 @@ const BenefitsPage = () => {
             </div>
           </div>
         </section>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -408,117 +405,128 @@ const BenefitsPage = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              {/* Order Now Button with Dropdown */}
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                className="relative"
-              >
-                <button
+              {/* Order Now Button with Horizontal Dropdown */}
+              <motion.div className="relative">
+                <motion.button
                   onClick={(e) => {
                     e.stopPropagation();
                     setShowOrderOptions(!showOrderOptions);
                   }}
-                  className="px-10 py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all flex items-center group"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="px-8 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white text-sm font-semibold rounded-full shadow hover:shadow-md transition-all flex items-center group"
                 >
                   <span className="relative flex items-center justify-center">
                     Order Now
-                    <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <ChevronRight
+                      className={`ml-1.5 w-4 h-4 transition-transform ${
+                        showOrderOptions
+                          ? "rotate-90"
+                          : "group-hover:translate-x-1"
+                      }`}
+                    />
                   </span>
-                </button>
+                </motion.button>
 
                 <AnimatePresence>
                   {showOrderOptions && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
+                      exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute z-10 mt-3 w-64 right-0 sm:left-0 sm:right-auto origin-top rounded-lg bg-white shadow-xl border border-amber-100"
+                      className="absolute z-10 mt-2 left-0 w-full min-w-[400px] origin-top"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      <div className="p-2 space-y-1">
-                        <a
+                      <div className="flex gap-1.5 p-1.5 bg-white rounded-lg shadow-md border border-amber-100">
+                        {/* Zomato Option */}
+                        <motion.a
                           href="https://zomato.onelink.me/xqzv/6nmthhe9"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center px-4 py-3 text-gray-800 hover:bg-amber-50 rounded-md transition-colors"
+                          className="flex-1 flex items-center p-2 text-gray-800 hover:bg-amber-50 rounded-md transition-colors border border-gray-100 text-xs"
+                          whileHover={{ scale: 1.02 }}
                         >
-                          <div className="bg-red-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
-                            <Image 
-                              src="/images/1080px-Zomato_logo.png" 
-                              alt="Zomato" 
-                              width={20} 
-                              height={20}
+                          <div className="bg-red-500 w-8 h-8 rounded-full flex items-center justify-center mr-2 shrink-0">
+                            <Image
+                              src="/images/1080px-Zomato_logo.png"
+                              alt="Zomato"
+                              width={16}
+                              height={16}
                               className="object-contain"
                             />
                           </div>
-                          <div>
-                            <div className="font-medium">Order via Zomato</div>
-                            <div className="text-xs text-gray-500">30-45 mins delivery</div>
+                          <div className="flex flex-col">
+                            <div className="font-medium">Zomato</div>
+                            <div className="text-[0.65rem] text-gray-500 mt-0.5 flex items-center">
+                              <Clock className="mr-0.5 w-2.5 h-2.5" />
+                              30-45 min
+                            </div>
                           </div>
-                        </a>
-                        <a
+                        </motion.a>
+
+                        {/* Swiggy Option */}
+                        <motion.a
                           href="https://www.swiggy.com/menu/1072365?source=sharing"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center px-4 py-3 text-gray-800 hover:bg-amber-50 rounded-md transition-colors"
+                          className="flex-1 flex items-center p-2 text-gray-800 hover:bg-amber-50 rounded-md transition-colors border border-gray-100 text-xs"
+                          whileHover={{ scale: 1.02 }}
                         >
-                          <div className="bg-orange-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
-                            <Image 
-                              src="/images/Swiggy_logo_PNG2.png" 
-                              alt="Swiggy" 
-                              width={20} 
-                              height={20}
+                          <div className="bg-orange-500 w-8 h-8 rounded-full flex items-center justify-center mr-2 shrink-0">
+                            <Image
+                              src="/images/Swiggy_logo_PNG2.png"
+                              alt="Swiggy"
+                              width={16}
+                              height={16}
                               className="object-contain"
                             />
                           </div>
-                          <div>
-                            <div className="font-medium">Order via Swiggy</div>
-                            <div className="text-xs text-gray-500">25-40 mins delivery</div>
+                          <div className="flex flex-col">
+                            <div className="font-medium">Swiggy</div>
+                            <div className="text-[0.65rem] text-gray-500 mt-0.5 flex items-center">
+                              <Clock className="mr-0.5 w-2.5 h-2.5" />
+                              25-40 min
+                            </div>
                           </div>
-                        </a>
-                        <a
+                        </motion.a>
+
+                        {/* WhatsApp Option */}
+                        <motion.a
                           href="https://wa.me/9289700931"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center px-4 py-3 text-gray-800 hover:bg-amber-50 rounded-md transition-colors"
+                          className="flex-1 flex items-center p-2 text-gray-800 hover:bg-amber-50 rounded-md transition-colors border border-gray-100 text-xs"
+                          whileHover={{ scale: 1.02 }}
                         >
-                          <div className="bg-green-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
-                            <Image 
-                              src="/images/whatsapp-logo.png" 
-                              alt="WhatsApp" 
-                              width={20} 
-                              height={20}
+                          <div className="bg-green-500 w-8 h-8 rounded-full flex items-center justify-center mr-2 shrink-0">
+                            <Image
+                              src="/images/whatsapp.jpg"
+                              alt="WhatsApp"
+                              width={16}
+                              height={16}
                               className="object-contain"
                             />
                           </div>
-                          <div>
-                            <div className="font-medium">Order via WhatsApp</div>
-                            <div className="text-xs text-gray-500">Direct message</div>
+                          <div className="flex flex-col">
+                            <div className="font-medium">WhatsApp</div>
+                            <div className="text-[0.65rem] text-gray-500 mt-0.5 flex items-center">
+                              <MessageCircle className="mr-0.5 w-2.5 h-2.5" />
+                              Direct
+                            </div>
                           </div>
-                        </a>
+                        </motion.a>
                       </div>
-                      <div className="px-4 py-2 bg-amber-50 text-xs text-amber-800 rounded-b-lg">
-                        Use code <span className="font-bold">LITTI10</span> for 10% off
+
+                      <div className="px-2 py-1.5 bg-amber-50 text-[0.65rem] text-amber-800 rounded-b-lg text-center mt-0.5">
+                        Use code <span className="font-bold">LITTI10</span> for
+                        10% off
                       </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
               </motion.div>
-
-              {/* Learn About Tradition Button */}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => router.push("/about")}
-                className="px-10 py-4 bg-white text-amber-700 border-2 border-amber-300 text-lg font-semibold rounded-full shadow-lg transition-all hover:bg-amber-50 hover:border-amber-400 flex items-center"
-              >
-                Learn About Our Tradition
-                <ChevronRight className="ml-2 w-5 h-5" />
-              </motion.button>
             </div>
-
             {/* Delivery info */}
             <div className="mt-8 flex items-center justify-center space-x-2 text-orange-600">
               <svg

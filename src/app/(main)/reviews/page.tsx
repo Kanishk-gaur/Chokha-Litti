@@ -23,7 +23,7 @@ export default function Testimonials() {
       name: "Rajesh Kumar",
       location: "Delhi",
       rating: 5,
-      text: "The most authentic Litti Chokha I&apos;ve had outside of Bihar. The smoky flavor of the litti and the spicy chokha took me back to my childhood. Absolutely delicious!",
+      text: "The most authentic Litti Chokha I have had outside of Bihar. The smoky flavor of the litti and the spicy chokha took me back to my childhood. Absolutely delicious!",
     },
     {
       id: 2,
@@ -37,7 +37,7 @@ export default function Testimonials() {
       name: "Amit Sharma",
       location: "Patna",
       rating: 4,
-      text: "Being from Bihar, I&apos;m very particular about my Litti Chokha. This place does justice to the traditional recipe. The sattu filling was perfectly spiced and the chokha had the right amount of tanginess.",
+      text: "Being from Bihar, I am very particular about my Litti Chokha. This place does justice to the traditional recipe. The sattu filling was perfectly spiced and the chokha had the right amount of tanginess.",
     },
     {
       id: 4,
