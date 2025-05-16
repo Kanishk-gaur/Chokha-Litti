@@ -3,114 +3,59 @@ import { MenuItem, MenuCategory } from "../components/menu/types"
 export const menuItems: MenuItem[] = [
   {
     id: 1,
-    name: "Traditional Litti Chokha",
-    description: "Wheat balls stuffed with sattu, served with mashed potato, eggplant, and tomato chokha",
-    price: "₹120",
-    category: "main",
-    popular: true,
-    image: "/images/litti-chokha.jpg" // Replace with your image path
+    name: "2 Litti Chokha (Plain)",
+    description: "Traditional wheat balls stuffed with sattu, served with a classic trio of mashed potato, brinjal, and tomato chokha. A simple and satisfying Bihari delicacy.",
+    price: "₹169",
+    category: "Litti Chokha",
+    spicy: true,
+    vegetarian: true,
+    image: "/images/Des.jpeg"
   },
   {
     id: 2,
-    name: "Spicy Litti Chokha",
-    description: "Our traditional litti with extra spices and green chili chokha",
-    price: "₹140",
-    category: "main",
+    name: "2 Litti Chokha with Amul/Gowardhan Ghee",
+    description: "Flavorful sattu-stuffed litti enriched with Amul or Gowardhan ghee, paired with spicy green chili-infused chokha. A fiery twist to the traditional favorite.",
+    price: "₹189",
+    category: "Litti Chokha",
     spicy: true,
-    image: "/images/spicy-litti.jpg" // Replace with your image path
+    vegetarian: true,
+    image: "/images/Litti-chockha.jpeg"
   },
   {
     id: 3,
-    name: "Paneer Litti",
-    description: "Litti stuffed with spiced cottage cheese, served with tomato chutney",
-    price: "₹160",
-    category: "main",
+    name: "2 Litti Chokha with A2 Cow Ghee (Desi Ghee)",
+    description: "Premium A2 cow ghee poured over hot littis for an authentic taste, served with fresh tomato chutney and hearty chokha. Pure, wholesome, and vegetarian.",
+    price: "₹229",
+    category: "Litti Chokha",
     vegetarian: true,
-    image: "/images/paneer-litti.jpg" // Replace with your image path
+    popular: true,
+    spicy: true,
+    image: "/images/Front.jpeg"
   },
   {
     id: 4,
-    name: "Mushroom Chokha",
-    description: "Roasted mushroom chokha with traditional litti",
-    price: "₹150",
-    category: "main",
+    name: "Laung Latta [1 piece]",
+    description: "A crispy, deep-fried sweet stuffed with khoya and dry fruits, coated with sugar syrup. A traditional Bihari dessert to end your meal on a sweet note.",
+    price: "₹39",
+    category: "Desserts",
     vegetarian: true,
-    image: "/images/mushroom-chokha.jpg" // Replace with your image path
+    image: "/images/Laungtatta.jpeg"
   },
   {
     id: 5,
-    name: "Litti Thali",
-    description: "Two littis served with chokha, dal, rice, papad, and sweet chutney",
-    price: "₹220",
-    category: "main",
+    name: "Litti Chokha [3 pieces] with Laung Latta",
+    description: "A festive combo featuring three littis, assorted chokha, dal, rice, papad, and sweet chutney, served with a delicious Laung Latta for dessert.",
+    price: "₹429",
+    category: "Combos",
     popular: true,
-    image: "/images/litti-thali.jpg" // Replace with your image path
-  },
-  {
-    id: 6,
-    name: "Sattu Paratha",
-    description: "Whole wheat flatbread stuffed with spiced sattu (roasted gram flour)",
-    price: "₹80",
-    category: "sides",
-    image: "/images/sattu-paratha.jpg" // Replace with your image path
-  },
-  {
-    id: 7,
-    name: "Aloo Chokha",
-    description: "Spiced mashed potatoes with mustard oil and green chilies",
-    price: "₹60",
-    category: "sides",
     vegetarian: true,
-    image: "/images/aloo-chokha.jpg" // Replace with your image path
-  },
-  {
-    id: 8,
-    name: "Baingan Chokha",
-    description: "Smoky roasted eggplant mash with spices and herbs",
-    price: "₹70",
-    category: "sides",
-    vegetarian: true,
-    image: "/images/baingan-chokha.jpg" // Replace with your image path
-  },
-  {
-    id: 9,
-    name: "Tamatar Chokha",
-    description: "Roasted tomato relish with garlic and green chilies",
-    price: "₹60",
-    category: "sides",
     spicy: true,
-    vegetarian: true,
-    image: "/images/tamatar-chokha.jpg" // Replace with your image path
-  },
-  {
-    id: 10,
-    name: "Sattu Drink",
-    description: "Traditional cooling beverage made with roasted gram flour, spices, and lemon",
-    price: "₹50",
-    category: "beverages",
-    image: "/images/sattu-drink.jpg" // Replace with your image path
-  },
-  {
-    id: 11,
-    name: "Masala Chaas",
-    description: "Spiced buttermilk with mint and cumin",
-    price: "₹40",
-    category: "beverages",
-    image: "/images/masala-chaas.jpg" // Replace with your image path
-  },
-  {
-    id: 12,
-    name: "Jaggery Lassi",
-    description: "Sweet yogurt drink flavored with jaggery and cardamom",
-    price: "₹60",
-    category: "beverages",
-    popular: true,
-    image: "/images/jaggery-lassi.jpg" // Replace with your image path
+    image: "/images/combo.avif"
   }
 ]
 
 export const categories: MenuCategory[] = [
-  { id: "main", name: "Main Dishes" },
-  { id: "sides", name: "Side Dishes" },
-  { id: "beverages", name: "Beverages" },
+  { id: "Litti Chokha", name: "Litti Chokha" },
+  { id: "Desserts", name: "Desserts" },
+  { id: "Combos", name: "Combos" },
 ]
