@@ -34,7 +34,7 @@ const BenefitsPage = () => {
   const [chartAnimated, setChartAnimated] = useState(false);
 
   const nutritionalInfo = [
-    { name: "Calories", amount: "450", unit: "kcal", dailyValue: "22%" },
+    { name: "Calories", amount: "327", unit: "kcal", dailyValue: "16%" },
     { name: "Protein", amount: "12", unit: "g", dailyValue: "24%" },
     { name: "Carbohydrates", amount: "58", unit: "g", dailyValue: "19%" },
     { name: "Dietary Fiber", amount: "8", unit: "g", dailyValue: "32%" },
@@ -346,6 +346,132 @@ const BenefitsPage = () => {
               >
                 <div
                   className={`${benefit.iconBg} w-16 h-16 rounded-full flex items-center justify-center mb-6`}
+                >
+                  {benefit.icon}
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-3">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-700 text-lg">{benefit.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </section>
+        {/* Why Eat Litti Chokha - Benefits Section */}
+        <section className="mb-28">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-800 mb-2">
+              Why Eat <span className="text-amber-600">Litti Chokha?</span>
+            </h2>
+            <div className="w-32 h-1.5 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mb-8 rounded-full"></div>
+            <p className="text-lg md:text-xl text-center text-orange-700 max-w-4xl mx-auto">
+              Discover the nutritional powerhouse of traditional Bihari cuisine
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.15 },
+              },
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {[
+              {
+                title: "Protein Powerhouse",
+                description:
+                  "Sattu (roasted gram flour) provides 20g plant-based protein per serving",
+                icon: <Award className="w-8 h-8" />,
+                color: "bg-amber-50",
+                borderColor: "border-amber-100",
+                iconBg: "bg-amber-100",
+                iconColor: "text-amber-600",
+              },
+              {
+                title: "Digestive Health",
+                description:
+                  "High fiber content (8g/serving) promotes gut health and regularity",
+                icon: <Leaf className="w-8 h-8" />,
+                color: "bg-green-50",
+                borderColor: "border-green-100",
+                iconBg: "bg-green-100",
+                iconColor: "text-green-600",
+              },
+              {
+                title: "Sustained Energy",
+                description:
+                  "Low glycemic index provides steady energy without spikes",
+                icon: <Brain className="w-8 h-8" />,
+                color: "bg-purple-50",
+                borderColor: "border-purple-100",
+                iconBg: "bg-purple-100",
+                iconColor: "text-purple-600",
+              },
+              {
+                title: "Mineral Rich",
+                description:
+                  "Excellent source of iron (23% DV), magnesium, and calcium",
+                icon: <Sparkles className="w-8 h-8" />,
+                color: "bg-blue-50",
+                borderColor: "border-blue-100",
+                iconBg: "bg-blue-100",
+                iconColor: "text-blue-600",
+              },
+              {
+                title: "Heart Healthy",
+                description:
+                  "Zero cholesterol and healthy fats from traditional preparation",
+                icon: <Heart className="w-8 h-8" />,
+                color: "bg-red-50",
+                borderColor: "border-red-100",
+                iconBg: "bg-red-100",
+                iconColor: "text-red-600",
+              },
+              {
+                title: "Versatile Diet",
+                description:
+                  "Naturally vegan and can be made gluten-free with alternative flours",
+                icon: <Shield className="w-8 h-8" />,
+                color: "bg-indigo-50",
+                borderColor: "border-indigo-100",
+                iconBg: "bg-indigo-100",
+                iconColor: "text-indigo-600",
+              },
+            ].map((benefit, index) => (
+              <motion.div
+                key={index}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 12,
+                    },
+                  },
+                }}
+                whileHover={{
+                  y: -10,
+                  boxShadow:
+                    "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                }}
+                className={`${benefit.color} p-8 rounded-2xl shadow-lg border ${benefit.borderColor} hover:shadow-2xl transition-all duration-300`}
+              >
+                <div
+                  className={`${benefit.iconBg} ${benefit.iconColor} w-16 h-16 rounded-full flex items-center justify-center mb-6`}
                 >
                   {benefit.icon}
                 </div>
