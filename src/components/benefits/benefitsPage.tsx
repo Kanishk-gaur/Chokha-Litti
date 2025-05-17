@@ -1,8 +1,21 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+} from "recharts";
+import { useState, useEffect } from "react";
 
-import { useState } from "react";
 import {
   ChevronRight,
   Award,
@@ -16,8 +29,43 @@ import {
 import { Clock, MessageCircle } from "lucide-react";
 
 const BenefitsPage = () => {
- 
   const [showOrderOptions, setShowOrderOptions] = useState(false);
+  const [activeNutrient, setActiveNutrient] = useState(0);
+  const [chartAnimated, setChartAnimated] = useState(false);
+
+  const nutritionalInfo = [
+    { name: "Calories", amount: "450", unit: "kcal", dailyValue: "22%" },
+    { name: "Protein", amount: "12", unit: "g", dailyValue: "24%" },
+    { name: "Carbohydrates", amount: "58", unit: "g", dailyValue: "19%" },
+    { name: "Dietary Fiber", amount: "8", unit: "g", dailyValue: "32%" },
+    { name: "Total Fat", amount: "18", unit: "g", dailyValue: "28%" },
+    { name: "Saturated Fat", amount: "9", unit: "g", dailyValue: "45%" },
+    { name: "Iron", amount: "4.2", unit: "mg", dailyValue: "23%" },
+    { name: "Calcium", amount: "120", unit: "mg", dailyValue: "12%" },
+    { name: "Vitamin A", amount: "380", unit: "IU", dailyValue: "13%" },
+    { name: "Vitamin C", amount: "15", unit: "mg", dailyValue: "17%" },
+  ];
+
+  const macroData = [
+    { name: "Protein", value: 12, color: "#4ade80" },
+    { name: "Carbs", value: 58, color: "#f97316" },
+    { name: "Fat", value: 18, color: "#facc15" },
+  ];
+
+  const healthMetrics = [
+    { name: "Antioxidants", current: 85, target: 100, color: "#10b981" },
+    { name: "Omega-3", current: 70, target: 100, color: "#3b82f6" },
+    { name: "Probiotics", current: 90, target: 100, color: "#8b5cf6" },
+    { name: "Vitamins", current: 75, target: 100, color: "#f97316" },
+    { name: "Minerals", current: 80, target: 100, color: "#f43f5e" },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveNutrient((prev) => (prev + 1) % nutritionalInfo.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   const gheeBenefits = [
     {
@@ -385,6 +433,286 @@ const BenefitsPage = () => {
               </motion.div>
             </div>
           </div>
+        </section>
+        {/* Nutritional Information Section */}
+        <section className="mb-28">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-800 mb-2">
+              Nutritional <span className="text-amber-600">Information</span>
+            </h2>
+            <div className="w-32 h-1.5 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mb-8 rounded-full"></div>
+            <p className="text-lg md:text-xl text-center text-orange-700 max-w-4xl mx-auto">
+              A complete breakdown of the nutritional profile of our Litti
+              Chokha with Desi Ghee
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {/* Nutritional Facts Card */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-white rounded-2xl shadow-xl overflow-hidden border border-amber-200" // Changed border color
+            >
+              <div className="bg-amber-700 text-white p-6">
+                {" "}
+                {/* Darker header */}
+                <h3 className="text-2xl font-bold">Nutrition Facts</h3>
+                <p className="text-amber-100">Per serving (250g)</p>
+              </div>
+
+              <div className="p-6">
+                <div className="border-b-2 border-gray-800 pb-4 mb-4">
+                  <div className="text-4xl font-bold text-gray-800">450</div>{" "}
+                  {/* Added text color */}
+                  <div className="text-gray-600">Calories</div>
+                </div>
+
+                <div className="space-y-4">
+                  {nutritionalInfo.map((nutrient, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0.5 }}
+                      animate={{
+                        opacity: activeNutrient === index ? 1 : 0.7,
+                        scale: activeNutrient === index ? 1.05 : 1,
+                      }}
+                      className="flex justify-between items-center border-b border-gray-200 pb-2"
+                    >
+                      <div className="font-medium text-gray-800">
+                        {nutrient.name}
+                      </div>{" "}
+                      {/* Added text color */}
+                      <div className="flex items-center gap-3">
+                        <span className="font-bold text-gray-800">
+                          {" "}
+                          {/* Added text color */}
+                          {nutrient.amount}
+                          {nutrient.unit}
+                        </span>
+                        <span className="text-sm text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full">
+                          {" "}
+                          {/* Changed colors */}
+                          {nutrient.dailyValue}
+                        </span>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <div className="mt-6 text-sm text-gray-500">
+                  * Percent Daily Values are based on a 2,000 calorie diet.
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Macronutrient Breakdown */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              onViewportEnter={() => setChartAnimated(true)}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-white rounded-2xl shadow-xl overflow-hidden border border-amber-200 p-6" // Changed border color
+            >
+              <h3 className="text-2xl font-bold mb-6 text-gray-800">
+                {" "}
+                {/* Added text color */}
+                Macronutrient Breakdown
+              </h3>
+
+              <div className="h-64 mb-8">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={macroData}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={60}
+                      outerRadius={80}
+                      paddingAngle={5}
+                      dataKey="value"
+                      animationBegin={0}
+                      animationDuration={1500}
+                      isAnimationActive={chartAnimated}
+                    >
+                      {macroData.map((entry, index) => (
+                        <Cell
+                          key={`cell-${index}`}
+                          fill={entry.color}
+                          stroke="#fff" // Added white stroke for better separation
+                          strokeWidth={2}
+                        />
+                      ))}
+                    </Pie>
+                    <Tooltip
+                      formatter={(value) => [`${value}g`, "Amount"]}
+                      contentStyle={{
+                        borderRadius: "8px",
+                        border: "none",
+                        boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                        backgroundColor: "#fff",
+                        color: "#333", // Darker text for better readability
+                      }}
+                    />
+                    <Legend
+                      verticalAlign="bottom"
+                      height={36}
+                      wrapperStyle={{ color: "#333" }} // Darker legend text
+                    />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+
+              <div className="grid grid-cols-3 gap-4 text-center">
+                {macroData.map((macro, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.05 }}
+                    className="bg-gray-50 p-3 rounded-lg border border-gray-200" // Added border
+                  >
+                    <div className="font-medium text-gray-800">
+                      {macro.name}
+                    </div>
+                    <div
+                      className="text-2xl font-bold"
+                      style={{ color: macro.color }}
+                    >
+                      {macro.value}g
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+        {/* Health Metrics Visualization */}
+        <section className="mb-28">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-800 mb-2">
+              Health <span className="text-amber-600">Metrics</span>
+            </h2>
+            <div className="w-32 h-1.5 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mb-8 rounded-full"></div>
+            <p className="text-lg md:text-xl text-center text-orange-700 max-w-4xl mx-auto">
+              See how our Litti Chokha with Desi Ghee contributes to your daily
+              health goals
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-2xl shadow-xl overflow-hidden border border-amber-100 p-8"
+          >
+            <div className="h-80">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  data={healthMetrics}
+                  margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                  <XAxis dataKey="name" stroke="#6b7280" />
+                  <YAxis stroke="#6b7280" />
+                  <Tooltip
+                    formatter={(value) => [`${value}%`, "Level"]}
+                    contentStyle={{
+                      borderRadius: "8px",
+                      border: "none",
+                      boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                      backgroundColor: "#fff",
+                    }}
+                  />
+                  <Legend />
+                  <Bar
+                    dataKey="current"
+                    name="Current Level"
+                    isAnimationActive={chartAnimated}
+                    animationBegin={0}
+                    animationDuration={1500}
+                  >
+                    {healthMetrics.map((entry, index) => (
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={entry.color}
+                        stroke="#fff"
+                        strokeWidth={1}
+                      />
+                    ))}
+                  </Bar>
+                  <Bar
+                    dataKey="target"
+                    name="Target Level"
+                    fill="#9ca3af" // Soft gray for target
+                    stroke="#6b7280" // Slightly darker stroke
+                    strokeWidth={1}
+                    isAnimationActive={chartAnimated}
+                    animationBegin={500}
+                    animationDuration={1500}
+                  />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mt-8">
+              {healthMetrics.map((metric, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-gray-50 p-4 rounded-lg text-center border border-gray-100"
+                >
+                  <div className="font-medium text-gray-800 mb-2">
+                    {metric.name}
+                  </div>
+                  <div className="relative h-2 bg-gray-200 rounded-full overflow-hidden">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${metric.current}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, delay: index * 0.2 }}
+                      className="absolute top-0 left-0 h-full rounded-full"
+                      style={{ backgroundColor: metric.color }}
+                    ></motion.div>
+                  </div>
+                  <div className="flex justify-between mt-1 text-xs text-gray-500">
+                    <span>0%</span>
+                    <span>100%</span>
+                  </div>
+                  <div
+                    className="mt-2 text-sm font-bold"
+                    style={{ color: metric.color }}
+                  >
+                    {metric.current}% of target
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-8 p-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg border border-amber-100">
+              <h4 className="font-bold text-amber-800 mb-3 text-lg">
+                Health Benefits Summary
+              </h4>
+              <p className="text-amber-700">
+                Our Litti Chokha with Desi Ghee provides a balanced nutritional
+                profile that supports overall wellness. The combination of whole
+                grains, vegetables, and ghee delivers essential nutrients that
+                contribute to digestive health, immune function, and sustained
+                energy throughout the day.
+              </p>
+            </div>
+          </motion.div>
         </section>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
