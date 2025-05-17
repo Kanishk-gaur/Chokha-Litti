@@ -12,7 +12,7 @@ export default function FeedbackForm() {
     rating: string;
     suggestions: string;
   }
-  
+
   const [formData, setFormData] = useState<FormData>({
     name: "",
     city: "",
@@ -25,11 +25,13 @@ export default function FeedbackForm() {
     text: string;
     type: string;
   }
-  
+
   const [message, setMessage] = useState<MessageState>({ text: "", type: "" });
   const [hoveredRating, setHoveredRating] = useState<number | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -64,9 +66,14 @@ export default function FeedbackForm() {
       } else {
         throw new Error("Failed to submit");
       }
-    } catch (err) { // Changed variable name from 'error' to 'err' and using it below
-      const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred';
-      setMessage({ text: `Failed to submit feedback: ${errorMessage}`, type: "error" });
+    } catch (err) {
+      // Changed variable name from 'error' to 'err' and using it below
+      const errorMessage =
+        err instanceof Error ? err.message : "Unknown error occurred";
+      setMessage({
+        text: `Failed to submit feedback: ${errorMessage}`,
+        type: "error",
+      });
     } finally {
       setIsSubmitting(false);
       setTimeout(() => setMessage({ text: "", type: "" }), 5000);
@@ -74,22 +81,29 @@ export default function FeedbackForm() {
   };
 
   return (
-    <div className="min-h-screen bg-amber-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="w-full max-w-6xl mx-auto p-8 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl shadow-2xl border border-orange-100">
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* Image on the left - replaced img with Next.js Image component */}
+    <div className="min-h-screen bg-amber-100 py-4 px-4 sm:py-8 sm:px-6 lg:px-8">
+      {" "}
+      {/* Reduced py-12 to py-4 for mobile */}
+      <div className="w-full max-w-6xl mx-auto p-4 sm:p-8 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl shadow-2xl border border-orange-100">
+        {" "}
+        {/* Reduced p-8 to p-4 for mobile */}
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-8">
+          {" "}
+          {/* Reduced gap-8 to gap-4 for mobile */}
+          {/* Image container - made much smaller on mobile */}
           <div className="w-full md:w-1/2 flex items-center justify-center">
-            <div className="relative w-full h-[600px]">
+            <div className="relative w-full h-[200px] sm:h-[300px] md:h-[600px]">
+              {" "}
+              {/* Significantly reduced mobile height */}
               <Image
                 src="/images/Logo.png"
                 alt="Customer feedback"
                 fill
                 className="object-contain"
-                priority // Marks this image as high priority for LCP
+                priority
               />
             </div>
           </div>
-
           {/* Form on the right */}
           <div className="w-full md:w-1/2">
             <div className="text-center mb-8">
