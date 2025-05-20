@@ -3,6 +3,14 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const metadata = {
+  title: "Chokha Litti",
+  description: "Your description here",
+  icons: {
+    icon: "/favico.png", 
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -11,7 +19,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-amber-50`}>
-        {/* Navbar and Footer removed from layout */}
         <main>{children}</main>
       </body>
     </html>
