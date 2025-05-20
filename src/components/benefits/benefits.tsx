@@ -272,7 +272,6 @@ const Benefits = () => {
           </motion.div>
 
           {/* Additional benefits highlight section */}
-          {/* Additional benefits highlight section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -281,30 +280,64 @@ const Benefits = () => {
             className="mt-20 bg-white rounded-3xl shadow-2xl overflow-hidden"
           >
             <div className="flex flex-col md:flex-row">
+              {/* Content section - expanded with more professional elements */}
               <div className="md:w-1/2 p-10 md:p-12 flex flex-col justify-center">
-                <h3 className="text-3xl font-bold text-orange-800 mb-6">
-                  Traditional Preparation, <br />
-                  <span className="text-amber-600">Modern Benefits</span>
-                </h3>
-                <p className="text-lg text-gray-700 mb-8">
-                  Our authentic Litti Chokha is prepared using time-honored
-                  techniques passed down through generations, combined with the
-                  finest ingredients to deliver both taste and nutrition.
-                </p>
+                <div className="mb-8">
+                  <span className="inline-block px-3 py-1 text-sm font-semibold text-amber-700 bg-amber-100 rounded-full mb-4">
+                    Authentic Bihari Cuisine
+                  </span>
+                  <h3 className="text-3xl font-bold text-orange-800 mb-6">
+                    Traditional Preparation, <br />
+                    <span className="text-amber-600">Modern Excellence</span>
+                  </h3>
+                  <p className="text-lg text-gray-700 mb-8">
+                    Our Litti Chokha embodies generations of culinary wisdom,
+                    crafted with premium ingredients and traditional techniques
+                    for unparalleled authenticity and flavor.
+                  </p>
+                </div>
 
-                <div className="space-y-4">
+                {/* Stats section */}
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  {[
+                    { value: "100+", label: "Years of Tradition" },
+                    { value: "5,000+", label: "Happy Customers" },
+                    { value: "12", label: "Natural Ingredients" },
+                    { value: "0", label: "Artificial Additives" },
+                  ].map((stat, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.7 + index * 0.1 }}
+                      className="bg-amber-50 p-4 rounded-xl"
+                    >
+                      <p className="text-2xl font-bold text-amber-700">
+                        {stat.value}
+                      </p>
+                      <p className="text-sm text-gray-600">{stat.label}</p>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Benefits list */}
+                <div className="space-y-4 mb-8">
                   {[
                     {
                       icon: <Leaf className="w-5 h-5" />,
-                      text: "100% Natural Ingredients",
+                      text: "Handmade with 100% Natural Ingredients",
+                      desc: "Sourced from local farmers and trusted suppliers",
                     },
                     {
                       icon: <Shield className="w-5 h-5" />,
-                      text: "No Preservatives or Additives",
+                      text: "Free from Preservatives & Additives",
+                      desc: "Pure, clean eating experience",
                     },
                     {
                       icon: <Flame className="w-5 h-5" />,
-                      text: "Traditional Cooking Methods",
+                      text: "Wood-fired Traditional Cooking",
+                      desc: "Authentic smoky flavor and texture",
                     },
                   ].map((item, index) => (
                     <motion.div
@@ -313,48 +346,61 @@ const Benefits = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.7 + index * 0.2 }}
-                      className="flex items-center"
+                      className="flex items-start"
                     >
-                      <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 mr-4">
+                      <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 mr-4 mt-1 flex-shrink-0">
                         {item.icon}
                       </div>
-                      <span className="text-gray-800 font-medium">
-                        {item.text}
-                      </span>
+                      <div>
+                        <p className="text-gray-800 font-medium">{item.text}</p>
+                        <p className="text-sm text-gray-500">{item.desc}</p>
+                      </div>
                     </motion.div>
                   ))}
                 </div>
+
+                {/* Testimonial */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 1.2 }}
+                  className="bg-orange-50 p-5 rounded-lg border-l-4 border-amber-500"
+                >
+                  <p className="italic text-gray-700 mb-2">
+                    &quot;This tastes just like my grandmother used to make! The
+                    authentic flavors take me back to my childhood in
+                    Bihar.&quot;
+                  </p>
+                  <p className="text-gray-600 text-sm">
+                    - Kanishk gaur,Vasant Kunj, New Delhi
+                  </p>
+                </motion.div>
               </div>
 
-              {/* Video section - replaced the image placeholder */}
-              <div className="md:w-1/2 relative min-h-[300px] md:min-h-0 bg-black">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover"
-                  poster="/images/video-poster.jpg" // Add a poster image for before video loads
-                >
-                  <source src="/videos/make.mp4" type="video/mp4" />
-                  <source
-                    src="/videos/litti-preparation.webm"
-                    type="video/webm"
-                  />
-                  Your browser does not support the video tag.
-                </video>
-
-                {/* Optional play button overlay (remove if video autoplays) */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="w-20 h-20 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center cursor-pointer"
+              {/* Video section - maintained full height */}
+              <div className="md:w-1/2 relative min-h-[400px] md:min-h-[600px] group">
+                {/* Video container with elegant border */}
+                <div className="absolute inset-0 m-2 md:m-3 overflow-hidden rounded-xl border-4 border-white/20 group-hover:border-amber-200/30 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover scale-[1.01] group-hover:scale-100 transition-transform duration-500"
+                    poster="/images/video-poster.jpg"
                   >
-                    <div className="w-16 h-16 rounded-full bg-amber-600 flex items-center justify-center">
-                      <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-white border-b-8 border-b-transparent ml-1"></div>
-                    </div>
-                  </motion.div>
+                    <source src="/videos/make.mp4" type="video/mp4" />
+                    <source
+                      src="/videos/litti-preparation.webm"
+                      type="video/webm"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
+
+                {/* Subtle overlay for better contrast */}
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/30 via-black/10 to-transparent rounded-2xl"></div>
               </div>
             </div>
           </motion.div>
