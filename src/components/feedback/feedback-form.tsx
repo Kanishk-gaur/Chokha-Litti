@@ -180,22 +180,22 @@ export default function FeedbackForm() {
         transition={{ duration: 0.5 }}
         className="w-full max-w-6xl mx-auto p-4 sm:p-8 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl shadow-2xl border border-orange-100"
       >
-        <div className="flex flex-col md:flex-row gap-2 sm:gap-8">
+        <div className="flex flex-col md:flex-row gap-1 sm:gap-8"> {/* Changed gap-2 to gap-1 for mobile */}
           {/* Enhanced Image container with continuous animation */}
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.2, type: "spring" }}
-            className="w-full md:w-1/2 flex items-center justify-center"
+            className="w-full md:w-1/2 flex items-center justify-center mb-2 sm:mb-0" 
           >
             <motion.div
               variants={logoVariants}
               initial="initial"
               animate="animate"
               whileHover="hover"
-              className="relative w-full h-[150px] sm:h-[300px] md:h-[600px] cursor-pointer" // Added cursor-pointer
-              onClick={handleLogoClick} // Added click handler
-              whileTap={{ scale: 0.95 }} // Added tap animation
+              className="relative w-full h-[120px] sm:h-[300px] md:h-[600px] cursor-pointer"
+              onClick={handleLogoClick}
+              whileTap={{ scale: 0.95 }}
             >
               <Image
                 src="/images/Logo.png"
@@ -244,11 +244,11 @@ export default function FeedbackForm() {
           >
             <motion.div
               variants={itemVariants}
-              className="text-center mb-4 sm:mb-8"
+              className="text-center mb-2 sm:mb-8" 
             >
               <motion.h1
                 whileHover={{ scale: 1.02 }}
-                className="text-3xl sm:text-4xl font-bold text-orange-800 mb-2 sm:mb-3"
+                className="text-2xl sm:text-4xl font-bold text-orange-800 mb-1 sm:mb-3"
               >
                 Share Your Feedback
               </motion.h1>
@@ -261,7 +261,7 @@ export default function FeedbackForm() {
                   repeat: Infinity,
                   repeatType: "reverse",
                 }}
-                className="text-lg sm:text-xl"
+                className="text-md sm:text-xl" 
               >
                 We value your opinion and suggestions
               </motion.p>
