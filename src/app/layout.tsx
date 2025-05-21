@@ -7,7 +7,7 @@ export const metadata = {
   title: "Chokha Litti",
   description: "Your description here",
   icons: {
-    icon: "/favico.png", 
+    icon: "/Liiti_Logo.png", 
   },
 };
 
