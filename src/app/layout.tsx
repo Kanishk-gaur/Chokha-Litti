@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import MusicWrapper from "@/components/MusicWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -7,7 +8,7 @@ export const metadata = {
   title: "Chokha Litti",
   description: "Your description here",
   icons: {
-    icon: "/Liiti_Logo.png", 
+    icon: "/logo3.png",
   },
 };
 
@@ -19,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-amber-50`}>
-        <main>{children}</main>
+        <MusicWrapper>
+          <main>{children}</main>
+        </MusicWrapper>
       </body>
     </html>
   );

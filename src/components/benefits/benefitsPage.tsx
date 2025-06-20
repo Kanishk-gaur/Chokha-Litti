@@ -366,7 +366,7 @@ const BenefitsPage = () => {
             className="mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-800 mb-2">
-              Why Eat <span className="text-amber-600">Litti Chokha?</span>
+              Why our <span className="text-amber-600">Litti Chokha?</span>
             </h2>
             <div className="w-32 h-1.5 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mb-8 rounded-full"></div>
             <p className="text-lg md:text-xl text-center text-orange-700 max-w-4xl mx-auto">

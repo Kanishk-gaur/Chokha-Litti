@@ -28,7 +28,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/"
+                  href="/home"
                   className="text-amber-100 hover:text-white transition"
                 >
                   Home
@@ -36,15 +36,15 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/benefits"
                   className="text-amber-100 hover:text-white transition"
                 >
-                  About Us
+                  Benefits
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/feedback"
+                  href="/"
                   className="text-amber-100 hover:text-white transition"
                 >
                   Feedback
@@ -59,7 +59,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center">
                 <FaMapMarkerAlt className="mr-2" />
-                <span>Budha Vihar ,Munirika,New Delhi, Delhi 110067</span>
+                <span>Budh Vihar ,Munirika,New Delhi, Delhi 110067</span>
               </li>
               <li className="flex items-center">
               <FaWhatsapp className="mr-2 " />

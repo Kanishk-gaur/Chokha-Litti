@@ -27,7 +27,7 @@ export default function Location() {
     {
       id: 1,
       name: "Chokha Litti Main Branch",
-      address: "Budha Vihar ,Munirika,New Delhi, Delhi 110067",
+      address: "Budh Vihar ,Munirika,New Delhi, Delhi 110067",
       hours: "Sunday to Saturday: 6 PM - 2 AM",
       phone: "+91 9097272726",
       

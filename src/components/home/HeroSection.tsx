@@ -16,7 +16,7 @@ export default function HeroSection() {
       description:
         "Whole wheat dough balls filled with roasted gram flour, herbs & spices",
       price: "₹169",
-      image: "/images/Litti.jpeg",
+      image: "/images/Litti-Chokha.jpg",
     },
     {
       id: 2,

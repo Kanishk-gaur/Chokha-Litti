@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import HeroSection from "@/components/home/HeroSection";
 import About from "@/components/about/aboutcode";
 import Testimonials from "@/app/(main)/reviews/page";
@@ -11,36 +10,8 @@ import Location from "@/app/(main)/location/page";
 import Benefits from "@/components/benefits/benefits";
 
 export default function Home() {
-  const audioRef = useRef<HTMLAudioElement | null>(null); // ✅ Typed
-
-  useEffect(() => {
-    const audio = audioRef.current;
-
-    const playAudio = () => {
-      if (audio) {
-        audio.volume = 0.1;
-        audio.play().catch((err) => {
-          console.warn("Autoplay blocked by browser:", err);
-        });
-      }
-    };
-
-    playAudio();
-
-    const handleInteraction = () => {
-      playAudio();
-      document.removeEventListener("click", handleInteraction);
-    };
-    document.addEventListener("click", handleInteraction);
-
-    return () => {
-      document.removeEventListener("click", handleInteraction);
-    };
-  }, []);
-
   return (
     <>
-      <audio ref={audioRef} src="/background.mp3" loop autoPlay />
       <Navbar />
       <div className="scroll-smooth">
         <main>

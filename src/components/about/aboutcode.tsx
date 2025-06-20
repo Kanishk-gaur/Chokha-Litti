@@ -133,7 +133,7 @@ export default function About() {
 
                 <motion.div variants={containerVariants} className="space-y-6 text-lg text-amber-800">
                   <motion.p variants={itemVariants} className="leading-relaxed">
-                    Originating from the heartlands of Bihar and eastern Uttar Pradesh, Chokha Litti is a rustic
+                    Originating from the heartlands of Bihar and eastern Uttar Pradesh, Litti Chokha is a rustic
                     delicacy that has been a staple in rural Indian cuisine for centuries. This wholesome dish consists
                     of two main components: the Litti, which is a baked wheat ball filled with sattu (roasted gram
                     flour) and spices, and the Chokha, a mashed vegetable preparation typically made with roasted

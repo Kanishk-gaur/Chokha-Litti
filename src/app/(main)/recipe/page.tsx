@@ -17,7 +17,7 @@ interface RecipeIngredient {
 export default function Recipe() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
-  const [activeTab, setActiveTab] = useState<"litti" | "chokha">("litti")
+  const [activeTab, setActiveTab] = useState<"chokha" | "litti">("chokha")
   const [expandedStep, setExpandedStep] = useState<number | null>(null)
 
   const toggleStep = (index: number) => {
@@ -52,8 +52,6 @@ export default function Recipe() {
     { name: "Coriander leaves", quantity: "2 tablespoons, chopped" },
     { name: "Mustard oil", quantity: "2 tablespoons" },
     { name: "Salt", quantity: "to taste" },
-    { name: "Red chili powder", quantity: "1/2 teaspoon" },
-    { name: "Cumin powder", quantity: "1/2 teaspoon" },
   ]
 
   const littiSteps: RecipeStep[] = [
@@ -65,7 +63,7 @@ export default function Recipe() {
     {
       title: "Prepare the filling",
       description:
-        "In another bowl, mix the sattu with chopped green chilies, ginger, garlic, onion, coriander leaves, lemon juice, pickle masala, mustard oil, and salt. Mix well. If the mixture is too dry, add a little water to make it slightly moist but not wet.",
+        "In another bowl, mix the sattu with chopped green chilies, ginger, garlic, onion, coriander leaves, lemon juice, pickle masala, mustard oil, and salt. Mix well, add a little water to make it slightly moist but not wet.",
     },
     {
       title: "Shape the litti",
@@ -88,7 +86,7 @@ export default function Recipe() {
     {
       title: "Roast the vegetables",
       description:
-        "Roast the eggplant, potatoes, and tomatoes directly over an open flame, turning occasionally until the skin is charred and the vegetables are soft inside. Alternatively, you can roast them in an oven at 200°C (400°F) for about 30-40 minutes.",
+        "Roast the eggplant, potatoes, and tomatoes directly over an open flame, turning occasionally until the skin is charred and the vegetables are soft inside. Alternatively, you can roast them in an oven at 200°C (400°F) for about 15-20 minutes.",
     },
     {
       title: "Peel and mash",
@@ -136,20 +134,12 @@ export default function Recipe() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Traditional Recipe</h2>
             <p className="max-w-2xl mx-auto text-amber-200">
               Learn how to prepare authentic Chokha Litti at home with our traditional recipe. Follow these steps to
-              create this rustic delicacy in your own kitchen.
+              cook this rustic delicacy in your own kitchen.
             </p>
           </motion.div>
 
           <div className="bg-amber-900 rounded-lg shadow-xl overflow-hidden">
             <div className="flex border-b border-amber-700">
-              <button
-                className={`flex-1 py-4 text-center font-bold transition-colors ${
-                  activeTab === "litti" ? "bg-amber-700 text-amber-100" : "text-amber-300 hover:bg-amber-800"
-                }`}
-                onClick={() => setActiveTab("litti")}
-              >
-                Litti
-              </button>
               <button
                 className={`flex-1 py-4 text-center font-bold transition-colors ${
                   activeTab === "chokha" ? "bg-amber-700 text-amber-100" : "text-amber-300 hover:bg-amber-800"
@@ -158,13 +148,21 @@ export default function Recipe() {
               >
                 Chokha
               </button>
+              <button
+                className={`flex-1 py-4 text-center font-bold transition-colors ${
+                  activeTab === "litti" ? "bg-amber-700 text-amber-100" : "text-amber-300 hover:bg-amber-800"
+                }`}
+                onClick={() => setActiveTab("litti")}
+              >
+                Litti
+              </button>
             </div>
 
             <div className="p-6">
               <div className="mb-8">
                 <h3 className="text-xl font-bold mb-4 text-amber-200">Ingredients</h3>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  {(activeTab === "litti" ? littiIngredients : chokhaIngredients).map((ingredient, index) => (
+                  {(activeTab === "chokha" ? chokhaIngredients : littiIngredients).map((ingredient, index) => (
                     <li key={index} className="flex justify-between">
                       <span>{ingredient.name}</span>
                       <span className="text-amber-300">{ingredient.quantity}</span>
@@ -176,7 +174,7 @@ export default function Recipe() {
               <div>
                 <h3 className="text-xl font-bold mb-4 text-amber-200">Preparation</h3>
                 <div className="space-y-3">
-                  {(activeTab === "litti" ? littiSteps : chokhaSteps).map((step, index) => (
+                  {(activeTab === "chokha" ? chokhaSteps : littiSteps).map((step, index) => (
                     <motion.div
                       key={index}
                       className="border border-amber-700 rounded-lg overflow-hidden"
