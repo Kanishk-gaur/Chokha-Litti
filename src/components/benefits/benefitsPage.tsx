@@ -203,110 +203,31 @@ const BenefitsPage = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <div className="inline-block relative">
+          <div className="inline-block relative text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-orange-900 mb-4">
               Litti Chokha with{" "}
-              <span className="text-amber-600">Pure Desi Ghee</span>
+              <span className="text-amber-600">Desi Ghee</span>
             </h1>
+            <h2 className="text-3xl md:text-4xl font-bold text-orange-800 mb-2">
+              A Superfood Packed with Benefits
+            </h2>
             <motion.div
-              className="absolute -bottom-2 left-0 h-1 bg-amber-500"
+              className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 bg-amber-500"
               initial={{ width: "0%" }}
               animate={{ width: "100%" }}
               transition={{ delay: 0.5, duration: 1 }}
             ></motion.div>
+            <motion.p
+              className="text-xl md:text-2xl text-orange-700 max-w-3xl mx-auto mt-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+            >
+              Enjoy authentic Bihari taste with the goodness of pure ghee.
+            </motion.p>
           </div>
-          <motion.p
-            className="text-xl md:text-2xl text-orange-700 max-w-3xl mx-auto mt-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-          >
-            Experience the authentic taste and health benefits of traditional
-            Bihari cuisine prepared with handcrafted desi ghee
-          </motion.p>
         </motion.div>
-        Ghee Preparation Section with timeline
-        {/* <section className="mb-28">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-800 mb-2">
-              The Art of{" "}
-              <span className="text-amber-600">Traditional Ghee</span> Making
-            </h2>
-            <div className="w-32 h-1.5 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mb-8 rounded-full"></div>
-            <p className="text-lg md:text-xl text-center text-orange-700 max-w-4xl mx-auto">
-              Our desi ghee is prepared using centuries-old Vedic methods that
-              preserve its nutritional integrity and rich flavor
-            </p>
-          </motion.div>
 
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="relative"
-          >
-            
-            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-amber-300 to-amber-500 transform -translate-x-1/2 hidden md:block"></div>
-
-            <div className="space-y-16 md:space-y-0">
-              {preparationSteps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  variants={fadeInUp}
-                  className={`flex flex-col ${
-                    index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                  } items-center md:mb-24`}
-                >
-                  <div
-                    className={`md:w-1/2 ${
-                      index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16"
-                    } mb-6 md:mb-0`}
-                  >
-                    <div
-                      className={`inline-block ${
-                        index % 2 === 0 ? "md:ml-auto" : ""
-                      }`}
-                    >
-                      <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-bold text-2xl mb-4 shadow-lg mx-auto md:mx-0">
-                        {step.step}
-                      </div>
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-lg text-gray-600">{step.description}</p>
-                  </div>
-
-                  <div className="md:w-1/2 relative">
-                    
-                    <div className="absolute left-1/2 top-1/2 w-6 h-6 bg-amber-500 rounded-full transform -translate-x-1/2 -translate-y-1/2 hidden md:block z-10 border-4 border-white shadow-md"></div>
-
-                    <div
-                      className={`bg-white p-4 rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 ${
-                        index % 2 === 0 ? "md:ml-16" : "md:mr-16"
-                      }`}
-                    >
-                      <div className="relative h-48 w-full rounded-lg overflow-hidden">
-                        <Image
-                          src={step.image || "/placeholder.svg"}
-                          alt={step.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </section> */}
         {/* Ghee Benefits Section with colorful cards */}
         <section className="mb-28">
           <motion.div
@@ -314,17 +235,7 @@ const BenefitsPage = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-800 mb-2">
-              Benefits of{" "}
-              <span className="text-amber-600">Litti Chokha with Ghee</span>
-            </h2>
-            <div className="w-32 h-1.5 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mb-8 rounded-full"></div>
-            <p className="text-lg md:text-xl text-center text-orange-700 max-w-4xl mx-auto">
-              When combined with Litti Chokha, our ghee transforms this
-              traditional dish into a superfood
-            </p>
-          </motion.div>
+          ></motion.div>
 
           <motion.div
             variants={staggerContainer}

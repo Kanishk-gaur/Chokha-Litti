@@ -7,9 +7,12 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Chokha Litti",
   description: "Your description here",
-  icons: {
-    icon: "/logo3.png",
-  },
+  icons: [
+    { rel: "icon", url: "/logo1.png", sizes: "32x32" },
+    { rel: "icon", url: "/logo2.png", sizes: "64x64" },
+    { rel: "icon", url: "/logo4.png", sizes: "128x128" },
+    { rel: "icon", url: "/logo5.png", sizes: "256x256" },
+  ],
 };
 
 export default function RootLayout({
