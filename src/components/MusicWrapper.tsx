@@ -12,7 +12,7 @@ export default function MusicWrapper({ children }: { children: React.ReactNode }
 
     const playAudio = () => {
       if (audio) {
-        audio.volume = 0.2;
+        audio.volume = 0.1;
         audio.play().catch((err) => {
           console.warn("Autoplay blocked by browser:", err);
         });
